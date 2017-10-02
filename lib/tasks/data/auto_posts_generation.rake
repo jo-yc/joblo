@@ -17,4 +17,11 @@ namespace :data do
       end
     end
   end
+
+  desc "Destroy posts"
+  task :auto_posts_destroy do
+    ActiveRecord::Base.transaction do
+      Post.destroy_all
+    end
+  end
 end
