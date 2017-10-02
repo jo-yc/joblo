@@ -1,0 +1,97 @@
+.module-small.bg-dark
+  .container
+    .row
+      .col-sm-3
+        .widget
+          h5.widget-title.font-alt
+            |About Titan
+          p
+            |The languages only differ in their grammar, their pronunciation and their most common words.
+          p
+            |Phone: +1 234 567 89 10
+          |Fax: +1 234 567 89 10
+          p
+            |Email:&nbsp;
+          a href="#"
+            |somecompany@example.com
+      .col-sm-3
+        .widget
+          h5.widget-title.font-alt
+            |Recent Comments
+          ul.icon-list
+            li
+              |Maria on&nbsp;
+              a href="#"
+                |Designer Desk Essentials
+            li
+              |John on&nbsp;
+              a href="#"
+                |Realistic Business Card Mockup
+            li
+              |Andy on&nbsp;
+              a href="#"
+                |Eco bag Mockup
+            li
+              |Jack on&nbsp;
+              a href="#"
+                |Bottle Mockup
+            li
+              |Mark on&nbsp;
+              a href="#"
+                |Our trip to the Alps
+      .col-sm-3
+        .widget
+          h5.widget-title.font-alt
+            |Blog Categories
+          ul.icon-list
+            - Post.categories_i18n.invert.each do |category|
+              li
+                = link_to category[0], blog_posts_category_index_path(category[1])
+                |&nbsp;&nbsp;
+                i.fa.fa-caret-right
+                = "  #{Post.posts_count category[1]}"
+      .col-sm-3
+        .widget
+          h5.widget-title.font-alt
+            |Popular Posts
+          ul.widget-posts
+            li.clearfix
+              .widget-posts-image
+                a href="#"
+                  img src="/assets/rp-1.jpg" alt="Post Thumbnail"
+              .widget-posts-body
+                .widget-posts-title
+                  a href="#"
+                    |Designer Desk Essentials
+                .widget-posts-meta
+                  |23 january
+            li.clearfix
+              .widget-posts-image
+                a href="#"
+                  img src="/assets/rp-2.jpg" alt="Post Thumbnail"
+              .widget-posts-body
+                .widget-posts-title
+                  a href="#"
+                    |Realistic Business Card Mockup
+                .widget-posts-meta
+                  |15 February
+hr.divider-d
+footer.footer.bg-dark
+  .container
+    .row
+      .col-sm-6
+        p.copyright.font-alt
+          |&copy; 2017&nbsp;
+          a href="index.html"
+            |TitaN
+          |, All Rights Reserved
+      .col-sm-6
+        .footer-social-links
+          a href="#"
+            i.fa.fa-facebook
+          a href="#"
+            i.fa.fa-twitter
+          a href="#"
+            i.fa.fa-dribbble
+          a href="#"
+            i.fa.fa-skype

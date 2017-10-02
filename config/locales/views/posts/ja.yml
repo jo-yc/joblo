@@ -1,0 +1,18 @@
+ja:
+  views:
+    posts:
+      id: "ID"
+      title: "タイトル"
+      body: "本文"
+      category: "カテゴリー"
+      status: "ステータス"
+      submit: "作成する"
+      update: "変更する"
+      posting: "投稿する"
+      undo: "投稿を元に戻す"
+      main_image_required: "メイン画像を選択してください"
+      posted: "投稿されました"
+      cancel: "投稿がキャンセルされました。"
+      placeholder:
+        title: "タイトルを入力してください"
+        body: "本文を入力してください"

@@ -1,0 +1,22 @@
+ko:
+  activerecord:
+    models:
+      post: "포스트"
+    attributes:
+      post:
+        id: "ID"
+        title: "제목"
+        body: "본문"
+        category: "카테고리"
+        images: "이미지"
+        aasm_state: "Status"
+        aasm_state/draft: "작성중"
+        aasm_state/posting: "포스팅완료"
+      post_image:
+        image: "이미지"
+    errors:
+      models:
+        post:
+          attributes:
+            images:
+              file_size_is_less_than_or_equal_to: "는%{count}까지 업로드 가능합니다."

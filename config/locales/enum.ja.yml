@@ -1,0 +1,10 @@
+ja:
+  enums:
+    post:
+      category:
+        prayer_requests: "お祈りリクエスト"
+        drama_team: "ドラマチーム"
+        korean_ministry: "韓国語ミニストリー"
+        devotion: "デヴォーション"
+        family: "ファミリー"
+        daily_life: "日常生活"

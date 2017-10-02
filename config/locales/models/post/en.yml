@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    models:
+      post: "Post"
+    attributes:
+      post:
+        id: "ID"
+        title: "Title"
+        body: "Body"
+        category: "Category"
+        images: "Images"
+        aasm_state: "Status"
+        aasm_state/draft: "Draft"
+        aasm_state/posting: "Posted"
+      post_image:
+        image: "Image"
+    errors:
+      models:
+        post:
+          attributes:
+            images:
+              file_size_is_less_than_or_equal_to: "is less than ro equal to %{count}."

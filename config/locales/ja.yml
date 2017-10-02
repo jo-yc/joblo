@@ -1,0 +1,5 @@
+ja:
+  hello: "こんにちは"
+  helpers:
+    select:
+      prompt: 選択してください

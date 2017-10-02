@@ -1,0 +1,13 @@
+ko:
+  views:
+    common:
+      created: "%{model}가 저장되었습니다."
+      updated: "%{model}가 변경되었습니다."
+      deleted: "%{model}가 삭제되었습니다."
+      crud_error: "%{model}에 에러가 발생했습니다."
+      sending: "송신중..."
+      confirm: "정말 실행하시겠습니까?"
+      new_obj: "%{model} 작성"
+      navigator:
+        dashboard: "메인 화면으로"
+        posts: "포스트"

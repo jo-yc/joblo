@@ -1,0 +1,10 @@
+en:
+  enums:
+    post:
+      category:
+        prayer_requests: "Prayer requests"
+        drama_team: "Drama team"
+        korean_ministry: "Korean ministry"
+        devotion: "Devotion"
+        family: "Family"
+        daily_life: "Daily life"

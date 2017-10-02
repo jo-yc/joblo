@@ -1,0 +1,34 @@
+.form-group
+  = f.label :title
+  = f.text_field :title, class: "form-control", placeholder: t('views.posts.placeholder.title')
+.form-group
+  = f.label :body
+  = f.text_area :body, class: "form-control", rows: 20, placeholder: t('views.posts.placeholder.body')
+.form-group
+  = f.label :category
+  = f.select :category, Post.categories_i18n.invert, {prompt: t('helpers.select.prompt')}, {class: "form-control"}
+.form-group
+  label
+    = f.label :images
+  .clearfix
+  - post.images.each do |image|
+    = f.fields_for :images, image do |im|
+      - if image.persisted? && image.image?
+        - if image == post.main_image
+          - main_image = "main-image"
+        .remove_images_area.float-left
+          input type="checkbox" name="remove_img_id[]" value="#{image.id}" id="remove_images_#{image.id}"
+          label for="remove_images_#{image.id}"
+            = image_tag image.thumb_url, class: "img-fluid d-block float-left margin-right-10 #{main_image}"
+        - next
+              / = link_to remove_image_screeners_survey_path(current_resource, survey), method: :delete, class: "btn btn-sm btn-success", data: { confirm: t('views.common.confirm'), toggle:"tooltip" }, title: t('views.common.btn.delete') do
+              /   i.fa.fa-close
+      - else
+        .margin-top-10
+          = im.file_field :image, multiple: true, name: "post[images_attributes][][image]"
+  .clearfix
+  - if post.images.present? && post.images.first.persisted?
+    = f.file_field :update_new_image, multiple: true, name: "update_post[images_attributes][][image]"
+/ .form-group
+/   = f.label :images
+/   = f.file_field :images, multiple: true

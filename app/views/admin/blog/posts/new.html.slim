@@ -1,0 +1,5 @@
+= form_for @post, url: admin_blog_posts_path do |f|
+  = render 'common/error_object', object: @post
+  = render 'admin/blog/posts/form', f: f, post: @post
+  .form-actions
+    = f.submit t('views.posts.submit'), class: "btn btn-border-d btn-round", data: { disable_with: t('views.common.sending') }

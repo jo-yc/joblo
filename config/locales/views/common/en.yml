@@ -1,0 +1,13 @@
+ko:
+  views:
+    common:
+      created: "Your %{model} has been saved."
+      updated: "Your %{model} has been updated."
+      deleted: "Your %{model} has been deleted."
+      crud_error: "There were errors in your %{model}."
+      sending: "sending..."
+      confirm: "Do you really want to run it?"
+      new_obj: "Create new %{model}"
+      navigator:
+        dashboard: "Go to dashboard"
+        posts: "Go to post"

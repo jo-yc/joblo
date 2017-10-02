@@ -1,0 +1,19 @@
+development: &default
+  bucket: jmission-jo
+  host: jmission-jo.s3.amazonaws.com
+  protocol: https
+
+test:
+  bucket: jmission-jo
+  host: jmission-jo.s3.amazonaws.com
+  protocol: https
+
+production:
+  bucket: jmission-jo
+  host: jmission-jo.s3.amazonaws.com
+  protocol: https
+
+staging:
+  bucket: jmission-jo
+  host: jmission-jo.s3.amazonaws.com
+  protocol: https

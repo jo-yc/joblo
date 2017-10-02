@@ -1,0 +1,10 @@
+ko:
+  enums:
+    post:
+      category:
+        prayer_requests: "기도편지"
+        drama_team: "드라마팀"
+        korean_ministry: "한국어 미니스트리"
+        devotion: "큐티"
+        family: "가족"
+        daily_life: "일상생활"

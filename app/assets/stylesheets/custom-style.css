@@ -1,0 +1,64 @@
+.btn-icon-jo {
+  padding: 8px;
+  letter-spacing: 0px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.main-image {
+  border: 1px solid black;
+}
+
+.remove_images_area input[type="checkbox"],
+.select_main_image input[type="radio"]{
+	display: none;
+}
+
+.remove_images_area input[type="checkbox"]:checked + label img,
+.select_main_image input[type="radio"]:checked + label img{
+	border: solid 2px #27afc3;
+}
+
+.float-left{
+  float: left;
+}
+
+.post-thumbnail.post-home img{
+  width: 100%;
+  height: 200px;
+}
+
+.post-images{
+  float: left;
+  margin-right: 5px;
+  position: relative;
+  display: inline-block;
+}
+
+.post-images label#main-image-label{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  padding: 0px 5px 0px 5px;
+  border: 1px solid #2e6da4;
+  color: #337ab7;
+}
+
+.post-images img#main-image{
+  border: 2px solid #2e6da4;
+}
+
+.post-preview{
+  height: 500px;
+}

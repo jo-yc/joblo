@@ -1,0 +1,13 @@
+ja:
+  views:
+    common:
+      created: "%{model}が正しく作成されました。"
+      updated: "%{model}が正しく更新されました。"
+      deleted: "%{model}が正しく削除されました。"
+      crud_error: "%{model}でエラーが発生しました。"
+      sending: "送信中..."
+      confirm: "本当に実行してよろしいですか？"
+      new_obj: "%{model} 作成"
+      navigator:
+        dashboard: "ダッシュボードへ"
+        posts: "投稿一覧へ"

@@ -1,0 +1,26 @@
+h1 Post Index
+= link_to t('views.common.navigator.dashboard'), admin_dashboard_index_path, class: "btn btn-primary margin-right-10"
+= link_to t('views.common.new_obj', model: Post.model_name.human), new_admin_blog_post_path, class: "btn btn-border-d btn-round"
+table.table
+  thead
+    tr
+      th = t('views.posts.id')
+      th = t('views.posts.title')
+      th = t('views.posts.body')
+      th = t('views.posts.category')
+      th = t('views.posts.status')
+      th
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.id
+        td
+          = link_to post.title, admin_blog_post_path(post)
+        td = truncate post.body, length: 30
+        td = post.category
+        td = post.aasm.human_state
+        td
+          = link_to edit_admin_blog_post_path(post), class: "btn btn-primary btn-icon-jo margin-right-10" do
+            i.fa.fa-edit
+          = link_to admin_blog_post_path(post), method: :delete, class: "btn btn-danger btn-icon-jo margin-right-10", data: { confirm: t('views.common.confirm') } do
+            i.fa.fa-trash-o

@@ -1,0 +1,22 @@
+p = @post.title
+p = @post.body
+p = @post.category
+- if @post.draft?
+  = form_tag posting_admin_blog_post_path(@post.id) do
+    - @post.images.each do |img|
+      .select_main_image.float-left
+        = radio_button_tag 'main_image_id', img.id
+        = label_tag "main_image_id_#{img.id}" do
+          = image_tag img.thumb_url
+    .clearfix
+    .form-actions
+      = submit_tag t('views.posts.posting'), class: "btn btn-border-d btn-round"
+- else
+  - @post.images.each do |img|
+    .post-images
+      - if img.id == @post.main_image.id
+        = label_tag "main_image", "Main Img", id: "main-image-label"
+      - image_id = img.id == @post.main_image.id ? "main-image" : ""
+      = image_tag img.thumb_url, id: image_id
+  .clearfix
+  = link_to t('views.posts.undo'), undo_admin_blog_post_path(@post), class: "btn btn-border-d btn-round", method: :post
