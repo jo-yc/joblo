@@ -45,7 +45,7 @@
   display: inline-block;
 }
 
-.post-images label#main-image-label{
+#post-img label#main-image-label{
   position: absolute;
   top: 20px;
   right: 20px;
@@ -55,8 +55,12 @@
   color: #337ab7;
 }
 
-.post-images img#main-image{
-  border: 2px solid #2e6da4;
+#post-img .gallery-image{
+  border: 3px solid #eee;
+}
+
+#post-img #main-image{
+  border: 3px solid #2e6da4;
 }
 
 .post-preview{

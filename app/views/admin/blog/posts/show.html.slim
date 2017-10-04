@@ -12,11 +12,10 @@ p = @post.category
     .form-actions
       = submit_tag t('views.posts.posting'), class: "btn btn-border-d btn-round"
 - else
-  - @post.images.each do |img|
-    .post-images
-      - if img.id == @post.main_image.id
-        = label_tag "main_image", "Main Img", id: "main-image-label"
-      - image_id = img.id == @post.main_image.id ? "main-image" : ""
-      = image_tag img.thumb_url, id: image_id
+  #post-img
+    image-sortable post-id="#{@post.id}"
   .clearfix
   = link_to t('views.posts.undo'), undo_admin_blog_post_path(@post), class: "btn btn-border-d btn-round", method: :post
+
+= render 'components/posts/image_sortable'
+= javascript_pack_tag 'image_sortable'
