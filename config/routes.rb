@@ -32,4 +32,14 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  namespace :api, defaults: {format: :json} do
+    namespace :blog do
+      resources :posts, except: [:index, :show, :new, :create, :edit, :update, :destroy] do
+        resources :image_sort do
+          put :sort, on: :member
+        end
+      end
+    end
+  end
 end

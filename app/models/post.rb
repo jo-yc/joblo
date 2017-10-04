@@ -14,7 +14,7 @@ class Post < ApplicationRecord
   include AASM
 
   belongs_to :main_image, class_name: "PostImage", foreign_key: "main_image_id", optional: true
-  has_many :images, class_name: "PostImage", foreign_key: "post_id", dependent: :destroy
+  has_many :images, -> { order(position: :asc) }, class_name: "PostImage", foreign_key: "post_id", dependent: :destroy
   accepts_nested_attributes_for :images, allow_destroy: true
 
   scope :on_posting, -> { where(aasm_state: :posting).order(id: :desc)}

@@ -2146,6 +2146,10 @@ Google map
   transform: translateY(50%);
 }
 
+.gallery-item.repeal-hover .gallery-image:after {
+  background: rgba(0, 0, 0, 0);
+}
+
 /*--------------------------------------------------------------
 	Blog Post
 --------------------------------------------------------------*/
