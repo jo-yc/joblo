@@ -1,6 +1,6 @@
 .main
   section.module
-    .container
+    .container.blog_height
       .row.multi-columns-row.post-columns
         = render "common/partials/blog_sidebar"
         .col-sm-8.col-sm-offset-1
@@ -21,7 +21,7 @@
                     |By&nbsp;
                     a href="#"
                       |Jo
-                    |&nbsp;| post.refined_date | 3 Comments
+                    = " | #{post.refined_date} | 3 Comments"
                 .post-entry
                   p
                     = truncate post.body, length: 170
