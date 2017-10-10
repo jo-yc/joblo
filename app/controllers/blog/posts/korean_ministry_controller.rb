@@ -2,7 +2,7 @@ class Blog::Posts::KoreanMinistryController < Blog::BaseController
   before_action :setup_post, except: [:index]
 
   def index
-    @posts = Post.category_on :korean_ministry
+    @category = :korean_ministry
   end
 
   def show; end

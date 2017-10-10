@@ -2,7 +2,7 @@ class Blog::Posts::FamilyController < Blog::BaseController
   before_action :setup_post, except: [:index]
 
   def index
-    @posts = Post.category_on :family
+    @category = :family
   end
 
   def show; end
