@@ -3,8 +3,11 @@ template#home-index-page
     section.module
       .container.blog_height ref="blog_height"
         .row.multi-columns-row.post-columns
-          = render "common/partials/blog_sidebar", enable_vue: true
+          = render "common/partials/blog_sidebar", enable_vue: true, lastest_posts: lastest_posts
           .col-sm-8.col-sm-offset-1
+            .col-sm-6.col-sm-offset-3 v-if="search_keyword"
+              h2.module-title
+                |Search for {{search_keyword}}
             div v-for="post in posts"
               .col-md-6.col-lg-6.post-preview
                 .post
@@ -27,7 +30,7 @@ template#home-index-page
                     a.more-link :href="post.object_show_path"
                       |Read more
             .clearfix
-            .pagination.font-alt
+            .pagination.font-alt v-if="totalPages != 0"
               .page-prev
                 a [href="javascript:void(0);" v-on:click="paginate(prevPage)" v-if="prevPage != 0"]
                   i.fa.fa-angle-left
@@ -41,5 +44,7 @@ template#home-index-page
                   i.fa.fa-angle-right
                 a [href="javascript:void(0);" v-else]
                   i.fa.fa-angle-right
+            h4.text-center v-if="totalPages == 0"
+              = t('views.posts.no_results_match')
             .clearfix
     section.module.parallax-bg data-background="/assets/section-2.jpg" style="padding: 0px;"

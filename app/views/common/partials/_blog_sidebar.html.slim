@@ -18,48 +18,18 @@
           = "  #{Post.posts_count category[1]}"
   .widget
     h5.widget-title.font-alt
-      |Popular Posts
+      |Latest Blog Posts
     ul.widget-posts
-      li.clearfix
-        .widget-posts-image
-          a href="#"
-            img src="/assets/rp-1.jpg" alt="Post Thumbnail"
-        .widget-posts-body
-          .widget-posts-title
-            a href="#"
-              |Designer Desk Essentials
-          .widget-posts-meta
-            |23 january
-      li.clearfix
-        .widget-posts-image
-          a href="#"
-            img src="/assets/rp-2.jpg" alt="Post Thumbnail"
-        .widget-posts-body
-          .widget-posts-title
-            a href="#"
-              |Realistic Business Card Mockup
-          .widget-posts-meta
-            |15 February
-      li.clearfix
-        .widget-posts-image
-          a href="#"
-            img src="/assets/rp-3.jpg" alt="Post Thumbnail"
-        .widget-posts-body
-          .widget-posts-title
-            a href="#"
-              |Eco bag Mockup
-          .widget-posts-meta
-            |21 February
-      li.clearfix
-        .widget-posts-image
-          a href="#"
-            img src="/assets/rp-4.jpg" alt="Post Thumbnail"
-        .widget-posts-body
-          .widget-posts-title
-            a href="#"
-              |Bottle Mockup
-          .widget-posts-meta
-            |2 March
+      - lastest_posts.each do |post|
+        li.clearfix
+          .widget-posts-image
+            = link_to blog_posts_category_show_path(post, post.category) do
+              img src="#{post.main_image_url}" alt="#{post.title}"
+          .widget-posts-body
+            .widget-posts-title
+              = link_to post.truncate_title, blog_posts_category_show_path(post, post.category)
+            .widget-posts-meta
+              = post.refined_date
   .widget
     h5.widget-title.font-alt
       |Tag
