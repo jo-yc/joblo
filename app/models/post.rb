@@ -18,7 +18,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
   scope :on_posting, -> { where(aasm_state: :posting).order(id: :desc)}
-  scope :latest, -> { order(id: :desc).limit(10) }
+  scope :latest, -> { on_posting.limit(10) }
   scope :category_on, ->(category) { on_posting.where(category: category) }
 
   enum category: { prayer_requests: 0, drama_team: 1, korean_ministry: 2, devotion: 3, family: 4, daily_life: 5 }

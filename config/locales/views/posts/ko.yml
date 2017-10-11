@@ -16,3 +16,4 @@ ko:
       placeholder:
         title: "제목을 입력해 주세요"
         body: "본문을 입력해 주세요"
+      latest_blog_posts: 전체 게시글

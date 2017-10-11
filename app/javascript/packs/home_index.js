@@ -3,8 +3,8 @@ import VueResource from 'vue-resource/dist/vue-resource.min'
 
 Vue.use(VueResource)
 
-Vue.component('post-index-page', {
-  template: '#post-index-page',
+Vue.component('home-index-page', {
+  template: '#home-index-page',
   data: () => {
     return {
       posts: [],
@@ -20,15 +20,15 @@ Vue.component('post-index-page', {
       this.search_posts()
     }
   },
-  props: ['category'],
+  props: [],
   computed: {
     index_url: function() {
-      return '/api/blog/posts'
+      return '/api/blog/home'
     },
   },
   mounted: function() {
     let that = this
-    Vue.http.get(this.index_url, {params: {category: this.category}}).then(function(response){
+    Vue.http.get(this.index_url).then(function(response){
       that.totalPages  = response.body.meta.pages_info.total_pages
       that.currentPage = response.body.meta.pages_info.current_page
       that.nextPage    = response.body.meta.pages_info.next_page
@@ -39,7 +39,7 @@ Vue.component('post-index-page', {
   methods: {
     paginate: function(page){
       let that = this
-      Vue.http.get(this.index_url, {params: {category: this.category, page: page, q: {title_or_body_cont: this.search_keyword}}}).then(function(response){
+      Vue.http.get(this.index_url, {params: {page: page, q: {title_or_body_cont: this.search_keyword}}}).then(function(response){
         that.posts       = response.body.posts
         that.totalPages  = response.body.meta.pages_info.total_pages
         that.currentPage = response.body.meta.pages_info.current_page
@@ -49,7 +49,7 @@ Vue.component('post-index-page', {
     },
     search_posts: function(){
       let that = this
-      Vue.http.get(this.index_url, {params: {category: this.category, q: {title_or_body_cont: this.search_keyword}}}).then(function(response){
+      Vue.http.get(this.index_url, {params: {q: {title_or_body_cont: this.search_keyword}}}).then(function(response){
         that.posts       = response.body.posts
         that.totalPages  = response.body.meta.pages_info.total_pages
         that.currentPage = response.body.meta.pages_info.current_page
@@ -61,5 +61,5 @@ Vue.component('post-index-page', {
 })
 
 new Vue({
-  el: '#post-index',
+  el: '#home-index',
 })

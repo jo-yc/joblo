@@ -94,3 +94,5 @@ gem 'acts_as_list'
 gem 'kaminari'
 
 gem 'gon'
+
+gem 'ransack'
