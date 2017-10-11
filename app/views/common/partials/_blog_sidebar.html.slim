@@ -1,9 +1,10 @@
-.col-sm-4.col-md-3.sidebar
+- enable_vue ||= false
+.col-sm-4.col-md-3.sidebar ref="sidebar"
   .widget
-    form role="form"
+    - if enable_vue
       .search-box
-        input.form-control type="text" placeholder="Search..."
-        button.search-btn type="submit"
+        input.form-control type="text" placeholder="Search" v-model="search_keyword"
+        button.search-btn v-on:click="search_posts" v-on:keyup.enter="search_posts"
           i.fa.fa-search
   .widget
     h5.widget-title.font-alt
@@ -115,9 +116,3 @@
         |Mark on&nbsp;
         a href="#"
           |Our trip to the Alps
-
-javascript:
-  window.onload= function(){
-  bodyHeight = $(".blog_height").height()
-    $(".sidebar").height(bodyHeight)
-  }

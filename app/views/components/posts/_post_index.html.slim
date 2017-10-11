@@ -3,9 +3,8 @@ template#post-index-page
     section.module
       .container.blog_height
         .row.multi-columns-row
-          = render "common/partials/blog_sidebar"
+          = render "common/partials/blog_sidebar", enable_vue: true
           .col-sm-8.col-sm-offset-1
-            / - @posts.each do |post|
             .post v-for="post in posts"
               .post-thumbnail
                 a :href="post.object_show_path"

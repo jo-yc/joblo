@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     namespace :blog do
+      resources :home, only: :index
       resources :posts, only: [:index, :show] do
         resources :image_sort do
           put :sort, on: :member
