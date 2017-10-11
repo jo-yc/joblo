@@ -17,5 +17,5 @@ p = @post.category
   .clearfix
   = link_to t('views.posts.undo'), undo_admin_blog_post_path(@post), class: "btn btn-border-d btn-round", method: :post
 
-= render 'components/posts/image_sortable'
+= render 'components/admin/posts/image_sortable'
 = javascript_pack_tag 'image_sortable'

@@ -66,3 +66,11 @@
 .post-preview{
   height: 500px;
 }
+
+nav.pagination a {
+  float: left;
+}
+
+.pagination div {
+  float: left;
+}

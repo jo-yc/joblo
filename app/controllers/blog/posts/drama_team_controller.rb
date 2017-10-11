@@ -2,7 +2,7 @@ class Blog::Posts::DramaTeamController < Blog::BaseController
   before_action :setup_post, except: [:index]
 
   def index
-    @posts = Post.category_on :drama_team
+    @category = :drama_team
   end
 
   def show; end

@@ -90,3 +90,7 @@ gem 'aasm'
 gem 'active_model_serializers', '~> 0.10.3'
 
 gem 'acts_as_list'
+
+gem 'kaminari'
+
+gem 'gon'

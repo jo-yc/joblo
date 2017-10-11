@@ -2,7 +2,7 @@ class Blog::Posts::DailyLifeController < Blog::BaseController
   before_action :setup_post, except: [:index]
 
   def index
-    @posts = Post.category_on :daily_life
+    @category = :daily_life
   end
 
   def show; end

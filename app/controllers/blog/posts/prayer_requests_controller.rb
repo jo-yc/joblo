@@ -1,7 +1,8 @@
 class Blog::Posts::PrayerRequestsController < Blog::BaseController
   before_action :setup_post, except: [:index]
+
   def index
-    @posts = Post.category_on :prayer_requests
+    @category = :prayer_requests
   end
 
   def show; end
