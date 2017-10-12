@@ -18,7 +18,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
   scope :on_posting, -> { where(aasm_state: :posting).order(id: :desc)}
-  scope :latest, -> { on_posting.limit(10) }
+  scope :latest, -> { on_posting.limit(4) }
   scope :category_on, ->(category) { on_posting.where(category: category) }
 
   enum category: { prayer_requests: 0, drama_team: 1, korean_ministry: 2, devotion: 3, family: 4, daily_life: 5 }
@@ -60,5 +60,9 @@ class Post < ApplicationRecord
 
   def truncate_body(max=500)
     self.body.length > max ? "#{self.body[0...max]}..." : self.body
+  end
+
+  def truncate_title(max=25)
+    self.title.length > max ? "#{self.title[0...max]}..." : self.title
   end
 end

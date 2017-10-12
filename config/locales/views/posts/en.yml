@@ -1,19 +1,20 @@
 en:
   views:
     posts:
-      id: "ID"
-      title: "Title"
-      body: "Body"
-      category: "Category"
-      status: "Status"
-      submit: "Submit"
-      update: "Update"
-      posting: "Posting"
-      undo: "Undo Posting"
-      main_image_required: "Please select post's main image"
-      posted: "The post is posted."
-      cancel: "Your post has been canceled."
+      id: ID
+      title: Title
+      body: Body
+      category: Category
+      status: Status
+      submit: Submit
+      update: Update
+      posting: Posting
+      undo: Undo Posting
+      main_image_required: Please select post's main image
+      posted: The post is posted
+      cancel: Your post has been canceled
       placeholder:
-        title: "Fill in your post's title"
-        body: "Fill in your post's body"
+        title: Fill in your post's title
+        body: Fill in your post's body
       latest_blog_posts: LATEST BLOG POSTS
+      no_results_match: No results match your search

@@ -2,7 +2,7 @@
   section.module-small
     .container.blog_height
       .row
-        = render "common/partials/blog_sidebar"
+        = render "common/partials/blog_sidebar", lastest_posts: @lastest_posts
         .col-sm-8.col-sm-offset-1
           .post
             .post-thumbnail
