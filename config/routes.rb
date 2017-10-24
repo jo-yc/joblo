@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         resources :devotion, only: [:index, :show]
         resources :family, only: [:index, :show]
         resources :daily_life, only: [:index, :show]
+        resources :tags, only: [:create, :show]
       end
     end
   end
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
     namespace :blog do
       resources :home, only: :index
       resources :posts, only: [:index, :show] do
+        get :tags_index, on: :collection
         resources :image_sort do
           put :sort, on: :member
         end

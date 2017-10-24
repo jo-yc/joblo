@@ -23,7 +23,7 @@ Vue.component('image-sortable', {
   mounted: function() {
     let that = this
     Vue.http.get(this.base_url).then(function(response){
-      that.images = response.body
+      that.images = response.data.data
     })
   },
   methods: {
@@ -38,13 +38,10 @@ Vue.component('image-sortable', {
       console.log(element)
     },
     onDragEnd(evt) {
-      // this.computeIndexes()
-      // draggingElement = null
-      console.log(evt)
       let that = this
       let sort_url = '/api/blog/posts/'+this.postId+'/image_sort/'+evt.clone.attributes['0'].value+'/sort'
       Vue.http.put(sort_url, {new_index: evt.newIndex+1}).then(function(response){
-        that.images = response.body
+        that.images = response.data.data
       })
     }
   }

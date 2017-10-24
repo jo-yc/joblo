@@ -1,19 +1,20 @@
 ko:
   activerecord:
     models:
-      post: "포스트"
+      post: 포스트
     attributes:
       post:
-        id: "ID"
-        title: "제목"
-        body: "본문"
-        category: "카테고리"
-        images: "이미지"
-        aasm_state: "Status"
-        aasm_state/draft: "작성중"
-        aasm_state/posting: "포스팅완료"
+        id: ID
+        title: 제목
+        body: 본문
+        category: 카테고리
+        tag_list: 태그
+        images: 이미지
+        aasm_state: Status
+        aasm_state/draft: 작성중
+        aasm_state/posting: 포스팅완료
       post_image:
-        image: "이미지"
+        image: 이미지
     errors:
       models:
         post:

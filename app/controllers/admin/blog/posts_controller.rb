@@ -13,7 +13,7 @@ class Admin::Blog::PostsController < Admin::BaseController
   end
 
   def create
-    @post = Post.new post_params
+    @post = Post.new post_params.merge(tag_list: params[:post][:tag_list].gsub("#", ","))
     if @post.save
       redirect_to admin_blog_posts_path, notice: I18n.t('views.common.created', model: Post.model_name.human)
     else
@@ -28,7 +28,7 @@ class Admin::Blog::PostsController < Admin::BaseController
 
   def update
     ActiveRecord::Base.transaction do
-      @post.update!(post_params) if post_params.present?
+      @post.update!(post_params.merge(tag_list: params[:post][:tag_list].gsub("#", ",")))
       @post.update!(update_params) if params[:update_post].present?
       @post.remove_images(params[:remove_img_id]) if params[:remove_img_id]
     end

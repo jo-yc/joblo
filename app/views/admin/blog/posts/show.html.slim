@@ -1,6 +1,7 @@
 p = @post.title
 p = @post.body
 p = @post.category
+p = refined_tag_list(@post)
 - if @post.draft?
   = form_tag posting_admin_blog_post_path(@post.id) do
     - @post.images.each do |img|

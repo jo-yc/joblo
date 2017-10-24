@@ -21,6 +21,8 @@ template#post-index-page
                   a href="#"
                     |Jo
                   |&nbsp;| {{post.refined_date}} | 3 Comments
+                  a :href="tag_path(tag)" v-for="tag in post.tag_list"
+                    |&nbsp;\#{{tag}}
               .post-entry
                 p
                   |{{post.refined_body}}

@@ -20,15 +20,20 @@ Vue.component('post-index-page', {
       this.search_posts()
     }
   },
-  props: ['category'],
+  props: ['category', 'type', 'tagName'],
   computed: {
     index_url: function() {
       return '/api/blog/posts'
     },
+    tags_index_url: function() {
+      return '/api/blog/posts/tags_index'
+    },
   },
   mounted: function() {
     let that = this
-    Vue.http.get(this.index_url, {params: {category: this.category}}).then(function(response){
+    const url = this.type == 'tags' ? this.tags_index_url : this.index_url
+    const params = this.type == 'tags' ? {tag_name: this.tagName} : {category: this.category}
+    Vue.http.get(url, {params: params}).then(function(response){
       that.totalPages  = response.body.meta.pages_info.total_pages
       that.currentPage = response.body.meta.pages_info.current_page
       that.nextPage    = response.body.meta.pages_info.next_page
@@ -56,6 +61,9 @@ Vue.component('post-index-page', {
         that.nextPage    = response.body.meta.pages_info.next_page
         that.prevPage    = response.body.meta.pages_info.prev_page
       })
+    },
+    tag_path: function(tagName){
+      return '/posts/tags/' + tagName
     },
   }
 })
