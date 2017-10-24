@@ -1,19 +1,20 @@
 ja:
   activerecord:
     models:
-      post: "ポスト"
+      post: ポスト
     attributes:
       post:
-        id: "ID"
-        title: "タイトル"
-        body: "本文"
-        category: "カテゴリー"
-        images: "画像"
-        aasm_state: "ステータス"
-        aasm_state/draft: "作成中"
-        aasm_state/posting: "投稿済み"
+        id: ID
+        title: タイトル
+        body: 本文
+        category: カテゴリー
+        tag_list: タグ
+        images: 画像
+        aasm_state: ステータス
+        aasm_state/draft: 作成中
+        aasm_state/posting: 投稿済み
       survey_image:
-        image: "ポスト画像"
+        image: ポスト画像
     errors:
       models:
         post:

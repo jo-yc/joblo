@@ -12,6 +12,7 @@
 
 class Post < ApplicationRecord
   include AASM
+  acts_as_taggable
 
   belongs_to :main_image, class_name: "PostImage", foreign_key: "main_image_id", optional: true
   has_many :images, -> { order(position: :asc) }, class_name: "PostImage", foreign_key: "post_id", dependent: :destroy
@@ -39,6 +40,10 @@ class Post < ApplicationRecord
   class << self
     def posts_count(category)
       Post.category_on(category).on_posting.count
+    end
+
+    def popular_tags
+      Post.tag_counts.order(taggings_count: :desc).limit(10)
     end
   end
 

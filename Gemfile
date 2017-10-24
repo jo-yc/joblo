@@ -96,3 +96,5 @@ gem 'kaminari'
 gem 'gon'
 
 gem 'ransack'
+
+gem 'acts-as-taggable-on'

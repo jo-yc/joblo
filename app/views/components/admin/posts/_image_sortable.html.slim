@@ -3,7 +3,7 @@ template#image-sortable
     draggable v-model="images" @start="drag=true" @end="onDragEnd"
       .col-sm-6.col-md-3.col-lg-3 v-for="img in images" :data-img-id="img.id"
         .gallery-item.repeal-hover
-          .gallery-image :id="img.image_id"
-            label#main-image-label v-if="img.main_image"
+          .gallery-image :id="img.attributes['image-id']"
+            label#main-image-label v-if="img.attributes['main-image']"
               |Main Img
-            img :src="img.thumb_url" alt="Gallery Image 1"
+            img :src="img.attributes['thumb-url']" alt="Gallery Image 1"

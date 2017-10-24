@@ -34,30 +34,8 @@
     h5.widget-title.font-alt
       |Tag
     .tags.font-serif
-      a href="#" rel="tag"
-        |Blog
-      a href="#" rel="tag"
-        |Photo
-      a href="#" rel="tag"
-        |Video
-      a href="#" rel="tag"
-        |Image
-      a href="#" rel="tag"
-        |Minimal
-      a href="#" rel="tag"
-        |Post
-      a href="#" rel="tag"
-        |Theme
-      a href="#" rel="tag"
-        |Ideas
-      a href="#" rel="tag"
-        |Tags
-      a href="#" rel="tag"
-        |Bootstrap
-      a href="#" rel="tag"
-        |Popular
-      a href="#" rel="tag"
-        |English
+      - Post.popular_tags.each do |tag|
+        = link_to tag.name, blog_posts_tag_path(tag.name), rel: "tag"
   .widget
     h5.widget-title.font-alt
       |Text

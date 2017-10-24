@@ -1,19 +1,20 @@
 en:
   activerecord:
     models:
-      post: "Post"
+      post: Post
     attributes:
       post:
-        id: "ID"
-        title: "Title"
-        body: "Body"
-        category: "Category"
-        images: "Images"
-        aasm_state: "Status"
-        aasm_state/draft: "Draft"
-        aasm_state/posting: "Posted"
+        id: ID
+        title: Title
+        body: Body
+        category: Category
+        tag_list: Tags
+        images: Images
+        aasm_state: Status
+        aasm_state/draft: Draft
+        aasm_state/posting: Posted
       post_image:
-        image: "Image"
+        image: Image
     errors:
       models:
         post:

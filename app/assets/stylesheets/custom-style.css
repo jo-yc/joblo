@@ -24,6 +24,16 @@
 	display: none;
 }
 
+.remove_images_area input[type="checkbox"] + label img,
+.select_main_image input[type="radio"] + label img{
+	border: solid 2px #eee;
+}
+
+.remove_images_area input[type="checkbox"] + label img.main-image,
+.select_main_image input[type="radio"] + label img.main-image{
+	border: solid 2px black;
+}
+
 .remove_images_area input[type="checkbox"]:checked + label img,
 .select_main_image input[type="radio"]:checked + label img{
 	border: solid 2px #27afc3;

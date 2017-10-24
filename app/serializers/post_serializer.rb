@@ -1,5 +1,5 @@
 class PostSerializer < ActiveModel::Serializer
-  attributes :id, :title, :body, :category, :refined_body, :refined_body_for_home, :refined_date, :main_image_url, :object_show_path
+  attributes :id, :title, :body, :category, :tag_list, :refined_body, :refined_body_for_home, :refined_date, :main_image_url, :object_show_path
 
   has_many :images, serializer: PostImageSerializer
 
