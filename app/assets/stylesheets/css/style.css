@@ -2179,6 +2179,13 @@ Google map
   margin-top: 10px;
 }
 
+.post-more div:nth-child(1) {
+	height: 12.5px;
+	float: left;
+	width: calc(100% - 88px);
+	border-bottom: 1px solid #c2c2c2;
+}
+
 .post-images-slider {
   position: relative;
 }
@@ -2228,7 +2235,7 @@ Google map
 }
 
 .more-link:after {
-  content: "\00BB";
+  /* content: "\00BB"; */
   color: #666666;
   padding-left: 5px;
 }
@@ -2383,7 +2390,7 @@ Google map
 }
 
 .widget .icon-list li a:before {
-  content: "\00BB";
+  /* content: "\00BB"; */
   color: #666666;
   padding-right: 5px;
 }

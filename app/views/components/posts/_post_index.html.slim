@@ -1,50 +1,44 @@
 template#post-index-page
-  .main
-    section.module
-      .container.blog_height
-        .row.multi-columns-row
-          = render "common/partials/blog_sidebar", enable_vue: true, lastest_posts: lastest_posts
-          .col-sm-8.col-sm-offset-1
-            .col-sm-6.col-sm-offset-3 v-if="search_keyword"
-              h2.module-title
-                |Search for {{search_keyword}}
-            .post v-for="post in posts"
-              .post-thumbnail
-                a :href="post.object_show_path"
-                  img :src="post.main_image_url" :alt="post.title"
-              .post-header.font-alt
-                h2.post-title
-                  a :href="post.object_show_path"
-                    |{{post.title}}
-                .post-meta
-                  |By&nbsp;
-                  a href="#"
-                    |Jo
-                  |&nbsp;| {{post.refined_date}} | 3 Comments
-                  a :href="tag_path(tag)" v-for="tag in post.tag_list"
-                    |&nbsp;\#{{tag}}
-              .post-entry
-                p
-                  |{{post.refined_body}}
-              .post-more
-                a.more-link :href="post.object_show_path"
-                  |Read more
-            .clearfix
-            .pagination.font-alt v-if="totalPages != 0"
-              .page-prev
-                a [href="javascript:void(0);" v-on:click="paginate(prevPage)" v-if="prevPage != 0"]
-                  i.fa.fa-angle-left
-                a [href="javascript:void(0);" v-else]
-                  i.fa.fa-angle-left
-              .page-num v-for="num in totalPages"
-                a href="javascript:void(0);" v-on:click="paginate(num)" :class="{active: num == currentPage}"
-                  |{{num}}
-              .page-next
-                a [href="javascript:void(0);" v-on:click="paginate(nextPage)" v-if="nextPage != 0"]
-                  i.fa.fa-angle-right
-                a [href="javascript:void(0);" v-else]
-                  i.fa.fa-angle-right
-            h4.text-center v-if="totalPages == 0"
-              = t('views.posts.no_results_match')
-            .clearfix
-    section.module.parallax-bg data-background="/assets/section-2.jpg" style="padding: 0px;"
+  .col-sm-8.col-sm-offset-1
+    .col-sm-6.col-sm-offset-3 v-if="search_keyword"
+      h2.module-title
+        |Search for {{search_keyword}}
+    .post v-for="post in posts"
+      .post-thumbnail
+        a :href="post.object_show_path"
+          img :src="post.main_image_url" :alt="post.title"
+      .post-header.font-alt
+        h2.post-title
+          a :href="post.object_show_path"
+            |{{post.title}}
+        .post-meta
+          |By&nbsp;
+          a href="#"
+            |Jo
+          |&nbsp;| {{post.refined_date}} | 3 Comments
+          a :href="tag_path(tag)" v-for="tag in post.tag_list"
+            |&nbsp;\#{{tag}}
+      .post-entry
+        p
+          |{{post.refined_body}}
+      .post-more
+        a.more-link :href="post.object_show_path"
+          |Read more
+    .clearfix
+    .pagination.font-alt v-if="totalPages != 0"
+      .page-prev
+        a [href="javascript:void(0);" v-on:click="paginate(prevPage)" v-if="prevPage != 0"]
+          i.fa.fa-angle-left
+        a [href="javascript:void(0);" v-else]
+          i.fa.fa-angle-left
+      .page-num v-for="num in totalPages"
+        a href="javascript:void(0);" v-on:click="paginate(num)" :class="{active: num == currentPage}"
+          |{{num}}
+      .page-next
+        a [href="javascript:void(0);" v-on:click="paginate(nextPage)" v-if="nextPage != 0"]
+          i.fa.fa-angle-right
+        a [href="javascript:void(0);" v-else]
+          i.fa.fa-angle-right
+    h4.text-center v-if="totalPages == 0"
+      = t('views.posts.no_results_match')
+    .clearfix

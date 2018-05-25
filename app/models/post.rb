@@ -22,7 +22,7 @@ class Post < ApplicationRecord
   scope :latest, -> { on_posting.limit(4) }
   scope :category_on, ->(category) { on_posting.where(category: category) }
 
-  enum category: { prayer_requests: 0, drama_team: 1, korean_ministry: 2, devotion: 3, family: 4, daily_life: 5 }
+  enum category: { prayer_requests: 0, drama_team: 1, korean_ministry: 2, devotion: 3, family: 4, daily_life: 5, thoughts: 6 }
 
   aasm do
     state :draft, initial: true

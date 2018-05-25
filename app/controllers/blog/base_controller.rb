@@ -14,4 +14,14 @@ class Blog::BaseController < ApplicationController
   def footer_name
     @footer_name = "common/partials/blog_footer"
   end
+
+  def page_name(name)
+    @page_name = name
+  end
+
+  protected
+
+  def setup_post(category)
+    @post = Post.category_on(category).find params[:id]
+  end
 end

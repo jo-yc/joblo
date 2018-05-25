@@ -20,6 +20,6 @@ class PostSerializer < ActiveModel::Serializer
   end
 
   def object_show_path
-    "/posts/#{object.category}/#{object.id}"
+    "/blog/posts/#{object.category}/#{object.id}"
   end
 end

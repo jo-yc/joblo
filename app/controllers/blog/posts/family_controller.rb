@@ -1,15 +1,10 @@
 class Blog::Posts::FamilyController < Blog::BaseController
-  before_action :setup_post, except: [:index]
+  before_action -> { setup_post(:family) }, except: :index
+  before_action -> { page_name(:post_index) }, only: :index
 
   def index
     @category = :family
   end
 
   def show; end
-
-  private
-
-  def setup_post
-    @post = Post.find params[:id]
-  end
 end

@@ -1,15 +1,10 @@
 class Blog::Posts::KoreanMinistryController < Blog::BaseController
-  before_action :setup_post, except: [:index]
+  before_action -> { setup_post(:korean_ministry) }, except: :index
+  before_action -> { page_name(:post_index) }, only: :index
 
   def index
     @category = :korean_ministry
   end
 
   def show; end
-
-  private
-
-  def setup_post
-    @post = Post.find params[:id]
-  end
 end

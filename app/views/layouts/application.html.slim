@@ -38,7 +38,13 @@ html
           = render @header_name
         - else
           = render "layouts/header"
-        = yield
+        .main
+          section.module-small
+            .container.blog_height
+              .row class="#{main_row_class(@page_name)}"
+                = render "common/partials/blog_sidebar", lastest_posts: @lastest_posts
+                = yield
+          section.module.parallax-bg data-background="/assets/section-2.jpg" style="padding: 0px;"
         = render "layouts/totop"
         - if @footer_name
           = render @footer_name

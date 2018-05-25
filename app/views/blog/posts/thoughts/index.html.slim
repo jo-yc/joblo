@@ -1,0 +1,5 @@
+#post-index
+  post-index-page category="#{@category}"
+
+= render 'components/posts/post_index', lastest_posts: @lastest_posts
+= javascript_pack_tag 'post_index'
